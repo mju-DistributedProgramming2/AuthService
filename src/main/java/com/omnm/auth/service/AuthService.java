@@ -1,11 +1,14 @@
-package com.mju.shop.auth.service;
+package com.omnm.auth.service;
 
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 
-import org.json.simple.JSONObject;
+import com.omnm.auth.commons.Constants;
+import com.omnm.auth.model.LoginRequest;
+import com.omnm.auth.repository.AuthTokenDAO;
+import com.omnm.auth.repository.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +22,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import com.mju.shop.auth.commons.Constants;
-import com.mju.shop.auth.model.LoginRequest;
-import com.mju.shop.auth.repository.AuthTokenDAO;
-import com.mju.shop.auth.repository.CustomerDAO;
 
 @Service
 public class AuthService implements UserDetailsService {

@@ -1,7 +1,9 @@
-package com.mju.shop.auth.service;
+package com.omnm.auth.service;
 
 import java.util.HashMap;
 
+import com.omnm.auth.model.RefreshToken;
+import com.omnm.auth.repository.AuthTokenDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,9 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mju.shop.auth.model.RefreshToken;
-import com.mju.shop.auth.provider.JwtTokenProvider;
-import com.mju.shop.auth.repository.AuthTokenDAO;
+import com.omnm.auth.provider.JwtTokenProvider;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,7 +24,7 @@ public class TokenService {
 //    private RefreshTokenRedisRepository refreshTokenRedisRepository;
 	
 	@Autowired
-	AuthTokenDAO customerTokenDAO;
+    AuthTokenDAO customerTokenDAO;
 	
 	@Autowired
 	JwtTokenProvider jwtTokenProvider;

@@ -1,18 +1,14 @@
-package com.mju.shop.auth.controller;
+package com.omnm.auth.controller;
 
 import java.util.HashMap;
 
-import javax.servlet.http.HttpServletRequest;
-
+import com.omnm.auth.service.AuthService;
+import com.omnm.auth.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.mju.shop.auth.service.AuthService;
-import com.mju.shop.auth.service.TokenService;
 
 import io.swagger.annotations.ApiOperation;
 

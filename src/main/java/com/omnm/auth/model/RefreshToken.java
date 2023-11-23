@@ -1,10 +1,6 @@
-package com.mju.shop.auth.model;
-
-import java.util.Date;
+package com.omnm.auth.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 

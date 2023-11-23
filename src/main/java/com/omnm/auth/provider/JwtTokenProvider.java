@@ -1,4 +1,4 @@
-package com.mju.shop.auth.provider;
+package com.omnm.auth.provider;
 
 import java.nio.charset.StandardCharsets;
 import java.sql.Date;

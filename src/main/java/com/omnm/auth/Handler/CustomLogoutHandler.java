@@ -1,23 +1,17 @@
-package com.mju.shop.auth.Handler;
+package com.omnm.auth.Handler;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import com.google.gson.JsonParser;
-import com.mju.shop.auth.provider.JwtTokenProvider;
-import com.mju.shop.auth.service.TokenService;
+import com.omnm.auth.provider.JwtTokenProvider;
+import com.omnm.auth.service.TokenService;
 
 @Component
 public class CustomLogoutHandler implements LogoutSuccessHandler {

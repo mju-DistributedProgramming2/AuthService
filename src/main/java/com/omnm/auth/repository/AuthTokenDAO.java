@@ -1,11 +1,10 @@
-package com.mju.shop.auth.repository;
+package com.omnm.auth.repository;
 
 
+import com.omnm.auth.model.RefreshToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-
-import com.mju.shop.auth.model.RefreshToken;
 
 
 public interface AuthTokenDAO extends JpaRepository<RefreshToken, Integer>{

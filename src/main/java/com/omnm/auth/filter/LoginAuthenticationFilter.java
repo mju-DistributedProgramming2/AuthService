@@ -1,4 +1,4 @@
-package com.mju.shop.auth.filter;
+package com.omnm.auth.filter;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -16,9 +16,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mju.shop.auth.provider.JwtTokenProvider;
-import com.mju.shop.auth.service.AuthService;
-import com.mju.shop.auth.service.TokenService;
+import com.omnm.auth.provider.JwtTokenProvider;
+import com.omnm.auth.service.AuthService;
+import com.omnm.auth.service.TokenService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.mju.shop.auth.Handler;
+package com.omnm.auth.Handler;
 
 
 import java.io.IOException;

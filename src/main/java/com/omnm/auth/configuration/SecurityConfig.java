@@ -1,5 +1,7 @@
-package com.mju.shop.auth.configuration;
+package com.omnm.auth.configuration;
 
+import com.omnm.auth.Handler.CustomLogoutHandler;
+import com.omnm.auth.filter.LoginAuthenticationFilter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -9,11 +11,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.mju.shop.auth.Handler.CustomLogoutHandler;
-import com.mju.shop.auth.filter.LoginAuthenticationFilter;
-import com.mju.shop.auth.provider.JwtTokenProvider;
-import com.mju.shop.auth.service.AuthService;
-import com.mju.shop.auth.service.TokenService;
+import com.omnm.auth.provider.JwtTokenProvider;
+import com.omnm.auth.service.AuthService;
+import com.omnm.auth.service.TokenService;
 
 import lombok.RequiredArgsConstructor;
 
