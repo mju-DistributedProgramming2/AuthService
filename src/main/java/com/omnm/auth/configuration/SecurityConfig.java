@@ -15,11 +15,10 @@ import com.omnm.auth.provider.JwtTokenProvider;
 import com.omnm.auth.service.AuthService;
 import com.omnm.auth.service.TokenService;
 
-import lombok.RequiredArgsConstructor;
+//import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private AuthService customerService;

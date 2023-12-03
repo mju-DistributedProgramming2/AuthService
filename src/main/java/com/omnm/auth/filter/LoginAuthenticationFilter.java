@@ -9,6 +9,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.omnm.auth.service.AuthService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -17,14 +18,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.omnm.auth.provider.JwtTokenProvider;
-import com.omnm.auth.service.AuthService;
 import com.omnm.auth.service.TokenService;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+//import lombok.RequiredArgsConstructor;
+//import lombok.extern.slf4j.Slf4j;
 
-@RequiredArgsConstructor
-@Slf4j 
 public class LoginAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private AuthenticationManager authenticationManager;
@@ -50,23 +48,24 @@ public class LoginAuthenticationFilter extends UsernamePasswordAuthenticationFil
         // key : username / password
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) {
-        Authentication authentication;
+        Authentication authentication = null;
      
         System.out.println(request.getHeader("user-agent"));
-        	
-        	String user_id = obtainUsername(request);
-			String password = obtainPassword(request);
-        	System.out.println(user_id + " !!@@ " + password);
 
-		    // UsernamePasswordAuthenticationToken을 통해 
-			// loadUserByUsername 메소드에서 로그인 판별
+
+            String user_id = obtainUsername(request);
+            String password = obtainPassword(request);
+            System.out.println(user_id + " !!@@ " + password);
+
+            // UsernamePasswordAuthenticationToken을 통해
+            // loadUserByUsername 메소드에서 로그인 판별
             authentication = authenticationManager.authenticate(
 //                    new UsernamePasswordAuthenticationToken(credential.getUsername(), credential.getPassword())
                     new UsernamePasswordAuthenticationToken(user_id, password)
             );
+            System.out.println("new authenticion success!");
 
-       System.out.println("new authenticion success!");
-            
+
         return authentication;
 //        return null;
     }

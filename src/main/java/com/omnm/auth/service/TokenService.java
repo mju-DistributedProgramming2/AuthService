@@ -14,9 +14,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.omnm.auth.provider.JwtTokenProvider;
 
-import lombok.RequiredArgsConstructor;
+//import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @Service
 @Transactional(readOnly = true)
 public class TokenService {

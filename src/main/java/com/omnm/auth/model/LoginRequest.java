@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
@@ -17,42 +19,42 @@ public class LoginRequest{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
-	String username;	
+	@Column(name = "customer_id")
+	String customerId;
 	
-	@ApiModelProperty(value = "비밀번호")
+//	@ApiModelProperty(value = "비밀번호")
 	String password;
 	
 	public String encoderPassword(String password) {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-		
+
 		this.password = bCryptPasswordEncoder.encode(password);
-		
+
 		System.out.println("암호화 된 패스워드 !! " + this.password);
-		
+
 		return this.password;
 	}
 	
 	public LoginRequest() {
 		super();
 		
-		this.username = "";
+		this.customerId = "";
 		this.password = "";
 	}
 	
 	public LoginRequest(String username, String password) {
-		this.username = username;
+		this.customerId = username;
 		this.password = password;
 	}
 
 
 
-	public String getUsername() {
-		return username;
+	public String getCustomerId() {
+		return customerId;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
 	}
 
 	public String getPassword() {
