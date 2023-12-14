@@ -41,7 +41,6 @@ public class JwtTokenProvider {
     	int i = jwt.lastIndexOf('.');
 		String withoutSignature = jwt.substring(0, i+1);
 		Jwt<Header,Claims> temp = Jwts.parser().parseClaimsJwt(withoutSignature);
-		System.out.println("test : " + testName);
         return jwt;
     }
     public String createJwtRefreshToken(String userId) {
