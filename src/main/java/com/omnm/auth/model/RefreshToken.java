@@ -23,16 +23,10 @@ public class RefreshToken {
 	}
 	
 	public RefreshToken(String userId, String token, String deviceId) {
-//		this.refresh_token_id = refresh_token_id;
 		this.userId = userId;
 		this.token = token;
 		this.deviceId = deviceId;
 	}
-	
-//	public Date getExpired_time_Date() {
-//		return this.expired_time;
-//	}
-	
 
 
 	public String getUserId() {

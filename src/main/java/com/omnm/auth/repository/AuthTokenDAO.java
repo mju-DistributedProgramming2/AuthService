@@ -9,16 +9,11 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface AuthTokenDAO extends JpaRepository<RefreshToken, Integer>{
 
-//	@Query("Select r from RefreshToken r Where r.userId = :userId AND r.browser = :browser")
-//	RefreshToken findByUserIdANDBrowser(String userId, String browser);
-	
 	@Query("Select r from RefreshToken r Where r.userId = :userId")
 	RefreshToken findByUserId(String userId);
-	
 	@Modifying
 	@Query("delete from RefreshToken r where r.userId = :userId")
 	void deleteByUserId(String userId);
-
 	@Modifying
 	@Query("delete from RefreshToken r where r.token = :token")
 	void deleteByRefreshToken(String token);

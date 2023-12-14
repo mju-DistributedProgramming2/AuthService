@@ -21,23 +21,16 @@ public class LoginRequest{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "customer_id")
 	String customerId;
-	
-//	@ApiModelProperty(value = "비밀번호")
 	String password;
 	
 	public String encoderPassword(String password) {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-
 		this.password = bCryptPasswordEncoder.encode(password);
-
-		System.out.println("암호화 된 패스워드 !! " + this.password);
-
 		return this.password;
 	}
 	
 	public LoginRequest() {
 		super();
-		
 		this.customerId = "";
 		this.password = "";
 	}
@@ -46,8 +39,6 @@ public class LoginRequest{
 		this.customerId = username;
 		this.password = password;
 	}
-
-
 
 	public String getCustomerId() {
 		return customerId;

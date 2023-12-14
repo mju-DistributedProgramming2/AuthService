@@ -40,24 +40,17 @@ public class AuthService implements UserDetailsService {
 
 	@Override
     public UserDetails loadUserByUsername(String user_id) throws UsernameNotFoundException {
-		System.out.println("loadUserByUsername !! ");
-//		Optional<Customer> customer_optional = customerDAO.findById(user_id);
 		Optional<LoginRequest> customer_optional = customerDAO.findById(user_id);
         if(!customer_optional.isPresent()) {throw new UsernameNotFoundException(user_id + " 아이디가 존재하지 않습니다.");}
-        System.out.println("존재하는 사용자 ! ");
         LoginRequest customer = customer_optional.get();
-        
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
         System.out.println("Email " + customer.getCustomerId() + " nickname " + customer.getPassword());
-
         customer.setPassword(customer.encoderPassword(customer.getPassword()));
         return new User(customer.getCustomerId(), customer.getPassword(), authorities);
     }
 	
 	public Object getCustomerInCustomerService(String username) {
-		System.out.println("Customer 정보 받아오기! (CustomerService 호출)");
 		String url = Constants.CUSTOMER_SERVICE_BASE_URL + Constants.CUSTOMER_SERVICE_GET_CUSTOMER_URL + username;
-		
 		RestTemplate template = new RestTemplate();
         URI uri = UriComponentsBuilder
                 .fromUriString(Constants.CUSTOMER_SERVICE_BASE_URL) //http://localhost에 호출
@@ -66,7 +59,6 @@ public class AuthService implements UserDetailsService {
                 .encode()
                 .build()
                 .toUri();
-		
         ResponseEntity<String> result = template.getForEntity(uri, String.class);
 		return result.getBody();
 	}

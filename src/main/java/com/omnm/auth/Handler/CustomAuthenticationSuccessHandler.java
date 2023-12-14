@@ -17,11 +17,6 @@ public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthent
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
             Authentication authentication) throws ServletException, IOException {
-        /*
-         * 쿠키에 인증 토큰을 넣어준다.
-         */
-    	
-    	System.out.println("handler");
         super.onAuthenticationSuccess(request, response, authentication);
     }
 
