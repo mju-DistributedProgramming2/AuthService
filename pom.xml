@@ -182,6 +182,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 			</plugin>
+
 <!--			<plugin>-->
 <!--&lt;!&ndash;      <groupId>org.jacoco</groupId>&ndash;&gt;-->
 <!--&lt;!&ndash;      <artifactId>jacoco-maven-plugin</artifactId>&ndash;&gt;-->
@@ -209,6 +210,10 @@
 
 	<repositories>
 		<repository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
@@ -223,6 +228,10 @@
 		</repository>
 	</repositories>
 	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</pluginRepository>
 		<pluginRepository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
